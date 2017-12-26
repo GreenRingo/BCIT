@@ -4,23 +4,23 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-
-
-
 namespace lab2
 {
     class Program
     {
 
-        static bool check(double value) { //проверка на +
-            if (value <= 0) {
+        static bool check(double value)
+        { //проверка на +
+            if (value <= 0)
+            {
                 Console.WriteLine("Вы ввели отрицательное значение ", value);
                 return false;
             }
             return true;
         }
 
-        static int menu() {
+        static int menu()
+        {
             string but_str;
             int but_int;
             bool flag;
@@ -33,7 +33,7 @@ namespace lab2
             if (!flag)
             {
                 Console.WriteLine("Вы ввели последовательность символов");
-                
+
             }
             return but_int;
         }
@@ -65,7 +65,8 @@ namespace lab2
                                     break;
                                 }
                             }
-                            catch (Exception e) {
+                            catch (Exception e)
+                            {
                                 Console.WriteLine("Вы вводите не число!", e);
                                 break;
                             }
@@ -117,12 +118,12 @@ namespace lab2
                                 Console.WriteLine("Вы вводите не число!", e);
                                 break;
                             }
-                            FigureCollections.Circle cir  = new FigureCollections.Circle(r);
+                            FigureCollections.Circle cir = new FigureCollections.Circle(r);
                             S = cir.Area();
                             cir.Print();
                             break;
                         }
-                    case 4: 
+                    case 4:
                         {
                             f = false;
                             break;
@@ -138,12 +139,12 @@ namespace lab2
             }
         }
     }
-    
+
 }
 
 namespace FigureCollections
 {
-    abstract class Figure:IComparable //класс фигура
+    abstract class Figure : IComparable //класс фигура
     {
         public string Type //тип фигуры
         {
@@ -155,20 +156,20 @@ namespace FigureCollections
             {
                 this._Type = value;
             }
-         }
-         string _Type; 
-         public abstract double Area(); //вычисление площади
-         public override string ToString() // Приведение к строке, переопределение метода Object
-         {
+        }
+        string _Type;
+        public abstract double Area(); //вычисление площади
+        public override string ToString() // Приведение к строке, переопределение метода Object
+        {
             return this.Type + " площадью " + this.Area().ToString();
-         }
-         public int CompareTo(object obj) // Сравнение элементов (для сортировки списка)
-         {
-             Figure p = (Figure)obj;
-             if (this.Area() < p.Area()) return -1;
-             else if (this.Area() == p.Area()) return 0;
-             else return 1; //(this.Area() > p.Area())
-         }
+        }
+        public int CompareTo(object obj) // Сравнение элементов (для сортировки списка)
+        {
+            Figure p = (Figure)obj;
+            if (this.Area() < p.Area()) return -1;
+            else if (this.Area() == p.Area()) return 0;
+            else return 1; //(this.Area() > p.Area())
+        }
     }
 }
 
@@ -209,7 +210,7 @@ namespace FigureCollections
 {
     class Square : Rectangle, IPrint
     {
-        public Square(double size) 
+        public Square(double size)
             : base(size, size)
         {
             this.Type = "Квадрат";

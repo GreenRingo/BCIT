@@ -31,7 +31,7 @@ namespace lab1
                     continue;
                 }
             } while (!ConvertResult || A == 0);
-                //--------------------------ввод коэф В------------------------------------
+            //--------------------------ввод коэф В------------------------------------
             do
             {
                 Console.Write("Введите B: ");
@@ -42,7 +42,7 @@ namespace lab1
                     Console.WriteLine("Вы ввели не число");
                 }
             } while (!ConvertResult);
-                //--------------------------ввод коэф С------------------------------------
+            //--------------------------ввод коэф С------------------------------------
             do
             {
                 Console.Write("Введите C: ");
@@ -54,28 +54,29 @@ namespace lab1
                 }
 
             } while (!ConvertResult);
-                //-------------------------вычисление и вывод D----------------------------
-                float D;
-                D = B * B - 4 * A * C;
-                Console.WriteLine("Дискриминант равен " + D.ToString("F3"));
-                //-------------------------вычисление и вывод корней-----------------------
-                if (D < 0)
-                {
-                    Console.WriteLine("Корней у данного уравнения нет");
-                    Console.ReadKey();
-                }
-                else if (D == 0)
-                {
-                    Console.WriteLine("Корень квадратного уравнения один и равен x = {0}", -B / (2 * A));
-                    Console.ReadKey();
-                }
-                else
-                {
-                    Console.WriteLine("Корней уравнения два:");
-                    Console.WriteLine("x1 = {0}", (-B + Math.Sqrt(D)) / (2 * A));
-                    Console.WriteLine("x2 = {0}", (-B - Math.Sqrt(D)) / (2 * A));
-                    Console.ReadKey();
-                }
+            //-------------------------вычисление и вывод D----------------------------
+            float D;
+            D = B * B - 4 * A * C;
+            Console.WriteLine("Дискриминант равен " + D.ToString("F3"));
+            //-------------------------вычисление и вывод корней-----------------------
+            if (D < 0)
+            {
+                Console.WriteLine("Корней у данного уравнения нет");
+                Console.ReadKey();
+            }
+            else if (D == 0)
+            {
+                Console.WriteLine("Корень квадратного уравнения один и равен x = {0}", -B / (2 * A));
+                Console.ReadKey();
+            }
+            else
+            {
+                Console.WriteLine("Корней уравнения два:");
+                Console.WriteLine("x1 = {0}", (-B + Math.Sqrt(D)) / (2 * A));
+                Console.WriteLine("x2 = {0}", (-B - Math.Sqrt(D)) / (2 * A));
+                Console.ReadKey();
+            }
         }
     }
 }
+
