@@ -4,9 +4,7 @@
 
 *.csproj
 *.config
-*.sln
 *.suo
 bin/
 obj/
 Properties/
-*.txt
